@@ -17,8 +17,9 @@ class InfoContainers extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           InfoContainer(
-            icon: 'windspeed',
+            icon: 'icons/windspeed',
             data: "${homeController.fetchedWeatherWindSpeed.value}km/h",
+            iconSize: 25,
           ),
           Container(
             height: 30,
@@ -26,8 +27,9 @@ class InfoContainers extends StatelessWidget {
             color: CustomColors.dividerLine,
           ),
           InfoContainer(
-            icon: 'clouds',
+            icon: 'icons/clouds',
             data: "${homeController.fetchedWeatherCloud.value}%",
+            iconSize: 25,
           ),
           Container(
             height: 30,
@@ -35,8 +37,9 @@ class InfoContainers extends StatelessWidget {
             color: CustomColors.dividerLine,
           ),
           InfoContainer(
-            icon: 'humidity',
+            icon: 'icons/humidity',
             data: "${homeController.fetchedWeatherHumidity.value}%",
+            iconSize: 25,
           ),
         ],
       ),

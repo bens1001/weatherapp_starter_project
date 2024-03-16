@@ -27,6 +27,10 @@ class HomeController extends GetxController {
   final fetchedWeatherHumidity = ''.obs;
   final fetchedWeatherWindSpeed = ''.obs;
   final fetchedWeatherCloud = ''.obs;
+  final fetchedWeatherSunrise = ''.obs;
+  final fetchedWeatherSunset = ''.obs;
+  final fetchedWeatherTempMax = ''.obs;
+  final fetchedWeatherTempMin = ''.obs;
 
   @override
   Future<void> onInit() async {
@@ -58,6 +62,7 @@ class HomeController extends GetxController {
       latitude.value = position.latitude;
       longitude.value = position.longitude;
       getAddress(latitude.value, longitude.value);
+      print("Latitude: ${latitude.value} \nLongitude: ${longitude.value}");
       isLoading.value = false;
     });
   }
@@ -73,6 +78,7 @@ class HomeController extends GetxController {
     try {
       Current fetchedCurrentWeather =
           await _currentRepository.fetchCurrentWeather(lat, lon);
+
       fetchedWeatherImage.value = fetchedCurrentWeather.weather![0].icon!;
       fetchedWeatherDescription.value =
           fetchedCurrentWeather.weather![0].description!;
@@ -85,6 +91,16 @@ class HomeController extends GetxController {
       fetchedWeatherWindSpeed.value =
           fetchedCurrentWeather.wind!.speed!.toString();
       fetchedWeatherCloud.value = fetchedCurrentWeather.clouds!.all!.toString();
+      fetchedWeatherSunrise.value = DateFormat("jm").format(
+          DateTime.fromMillisecondsSinceEpoch(
+              fetchedCurrentWeather.sys!.sunrise! * 1000));
+      fetchedWeatherSunset.value = DateFormat("jm").format(
+          DateTime.fromMillisecondsSinceEpoch(
+              fetchedCurrentWeather.sys!.sunset! * 1000));
+      fetchedWeatherTempMax.value =
+          fetchedCurrentWeather.main!.tempMax!.toString();
+      fetchedWeatherTempMin.value =
+          fetchedCurrentWeather.main!.tempMin!.toString();
     } catch (e) {
       print(e.toString());
     }

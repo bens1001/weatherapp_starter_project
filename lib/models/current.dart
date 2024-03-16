@@ -47,9 +47,9 @@ class Current {
 
 class Data {
   int? temp;
-  double? feelsLike;
-  double? tempMin;
-  double? tempMax;
+  int? feelsLike;
+  int? tempMin;
+  int? tempMax;
   int? humidity;
 
   Data({
@@ -62,9 +62,9 @@ class Data {
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         temp: (json['temp'] as num?)?.round(),
-        feelsLike: (json['feels_like'] as num?)?.toDouble(),
-        tempMin: (json['temp_min'] as num?)?.toDouble(),
-        tempMax: (json['temp_max'] as num?)?.toDouble(),
+        feelsLike: (json['feels_like'] as num?)?.round(),
+        tempMin: (json['temp_min'] as num?)?.round(),
+        tempMax: (json['temp_max'] as num?)?.round(),
         humidity: json['humidity'] as int?,
       );
 

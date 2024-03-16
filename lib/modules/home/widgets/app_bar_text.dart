@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weatherapp_starter_project/modules/home/controller.dart';
 
-class AppBarTitle extends StatelessWidget {
-  AppBarTitle({super.key});
+class AppBarText extends StatelessWidget {
+  AppBarText({super.key});
 
   final HomeController homeController =
       Get.put(HomeController(), permanent: true);
@@ -11,7 +11,7 @@ class AppBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 5),
+      padding: const EdgeInsets.only(top: 10, left: 5, bottom: 10),
       child: Obx(
         () => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
