@@ -158,6 +158,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/X13%20Yoga/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///C:/Users/X13%20Yoga/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.0",
       "packageUri": "lib/",
@@ -296,7 +302,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2024-03-16T09:14:37.209888Z",
+  "generated": "2024-03-16T11:05:16.086217Z",
   "generator": "pub",
   "generatorVersion": "3.3.1"
 }
